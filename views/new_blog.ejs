@@ -5,8 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>The Blog | New Blog</title>
     <link rel="stylesheet" href="/stylesheets/new_blog.css">
+    <link rel="stylesheet" href="/stylesheets/header.css">
 </head>
 <body>
+
+<%- include('partials/header', {email: email}); %>
+
 <div class="container">
     <h2>New Blog</h2>
     <% if (error) { %>

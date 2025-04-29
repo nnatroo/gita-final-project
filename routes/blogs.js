@@ -8,22 +8,26 @@ const requireAuth = (req, res, next) => {
     if (req.session.user) {
         next();
     } else {
-        console.log(req.session.user);
+        console.log("no user found");
         res.redirect('/login');
     }
 }
+
 
 router.get('/', requireAuth, function (req, res, next) {
     const data = fs.readFileSync(BLOGS_FILE)
     const blogs = JSON.parse(data)
 
+    console.log(req.session.user);
 
-    res.render('blogs', {error: null, blogs});
+    const email = req.session.user.email;
+    res.render('blogs', {error: null, blogs, email});
 
 });
 
 router.get('/new', requireAuth, function (req, res, next) {
-    res.render('new_blog', {error: null});
+    const email = req.session.user.email;
+    res.render('new_blog', {error: null, email});
 });
 
 router.post('/new', requireAuth, function (req, res, next) {
@@ -45,7 +49,20 @@ router.post('/new', requireAuth, function (req, res, next) {
     blogs.push(newBlog);
     fs.writeFileSync(BLOGS_FILE, JSON.stringify(blogs, null, 2));
 
+
     res.redirect("/blogs");
+
+})
+
+router.get(`/:id`, requireAuth, function (req, res, next) {
+    const blogId = req.params.id;
+
+    const data = fs.readFileSync(BLOGS_FILE)
+    const blogs = JSON.parse(data);
+
+    const blog = blogs.find(blog => blog.id === blogId)
+
+    res.render('blog', {blog});
 })
 
 module.exports = router;
