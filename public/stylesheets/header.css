@@ -1,8 +1,17 @@
 header {
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
     margin: auto;
     padding-top: 50px;
+}
+
+.username p {
+    color: #1A1A1A;
+    font-family: Inter, sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 24px;
 }
 
 .nav-wrapper {

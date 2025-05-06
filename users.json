@@ -1,10 +1,46 @@
 [
   {
-    "email": "iraklilt@gmail.com",
-    "password": "$2b$10$G8AN2jfy1YGQdzY81vszKekCc2aSKsNYUi4su50F5y8rVKVXJ./ve"
+    "email": "something1@gmail.com",
+    "password": "$2b$10$dxwfY2P0q3DA0YyiGoiG3.r8vYD8cPC.eX9yBXK6Kd9QEgotcskBS"
   },
   {
-    "email": "asd@asd.com",
-    "password": "$2b$10$VESRZo5L5STUhb/R8u.DIeEh/p9pDIaJeX4n8zxXgjTXUSBzpU8vi"
+    "email": "something123@gmail.com",
+    "password": "$2b$10$dYgyBt.tlAprqcMUPbD4ruVzbp8Aw/OjNKHPs5o6.3XLzizWB5XsW"
+  },
+  {
+    "email": "123@gmail.com",
+    "password": "$2b$10$aBLNvLCKO0aFhpH7hozqf.oQPVmzKfeQ/Llek3Yc1B1Aou8Om91ua"
+  },
+  {
+    "email": "1234@gmail.com",
+    "password": "$2b$10$DP0oqLSQcehP4p/qYIpH9uSz9oCIjMuP5SO1SuzEGGAjHVI7Ij6yS"
+  },
+  {
+    "email": "sabatediashvili9@gmail.com",
+    "password": "$2b$10$onAExr2Y6qBVGbx1ODKDlOQVrAzwd5ay8jT4AuK1hAxnr3XrO0Nj."
+  },
+  {
+    "email": "melo@gmail.com",
+    "password": "$2b$10$Jpr5bKRB18wwBPXvJ7Bgz.ONxZKgJQbUgmaP/vdqkM/XBtz9mPCjC"
+  },
+  {
+    "email": "admin@gmail.com",
+    "password": "$2b$10$ww3UlEt5LRXWIrMVoI2JOudDxrGu3XEVmRjvbPLgSS2jKx4D83tG."
+  },
+  {
+    "email": "hello12345@gmail.com",
+    "password": "$2b$10$GrkerIqPxp1LrKE3GzPuxurzTsAXIpt8BFd1cD091BLjXM95Xcsqe"
+  },
+  {
+    "email": "test@test.com",
+    "password": "$2b$10$YH6GdYRGpCLAAUzVosuZsu/9KyuhG4.YnmzgESkrQiYA2LGLak4O."
+  },
+  {
+    "email": "nugonatroshvili@gmail.com",
+    "password": "$2b$10$oGC/hC2SQJJlwYgSw.Q7x.XQl/IPonSpyQ.a/JM.T/uqzZJP9dnBy"
+  },
+  {
+    "email": "iraklilt@gmail.com",
+    "password": "$2b$10$uO/FWD1iacedogj5UbvIYOsDUosdFZyoqC3BsrITcH03p.ntbQ7ru"
   }
 ]

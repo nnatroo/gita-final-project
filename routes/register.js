@@ -1,45 +1,49 @@
 const express = require('express');
-const {request, json} = require("express");
-const fs = require("fs")
 const router = express.Router();
-const bcrypt = require("bcryptjs");
+const fs = require('fs');
+const bcrypt =  require("bcryptjs");
 
-const USERS_FILE = "users.json"
+const USERS_FILE = 'users.json';
 
-router.get('/', function (req, res, next) {
+router.get('/', function(req, res, next) {
     if (req.session.user) {
-        return res.redirect('/blogs');
+        return res.redirect('/');
     }
-    res.render('register', {error: null});
+    res.render('register', { error: null });
 });
 
-router.post('/', function (req, res, next) {
-    const {email, password, confirmPassword} = req.body
+router.post('/', function(req, res, next) {
+    const { email, password, confirmPassword } = req.body;
 
-    if (password !== confirmPassword) {
-        res.render('register', {error: "Passwords don't match"});
+    if (confirmPassword !== password) {
+        res.render('register', { error: 'Passwords do not match' });
     }
 
-    const data = fs.readFileSync(USERS_FILE)
-    const users = JSON.parse(data)
+    let users = [];
 
-    const emailExist = users.find(user => user.email === email);
-    if (emailExist) {
-        return res.render('register', {error: `Email already registered`});
+    if (fs.existsSync(USERS_FILE)) {
+        const data = fs.readFileSync(USERS_FILE);
+        users = JSON.parse(data);
+    }
+
+    const emailExists = users.find(user => user.email === email);
+    if (emailExists) {
+        return res.render('register', { error: 'Email already registered' });
     }
 
     if (password.length < 8) {
-        return res.render('register', {error: `Passwords should contain at least 8 characters`});
+        return res.render('register', { error: 'Password should contain 8 characters' });
     }
 
     const salt = bcrypt.genSaltSync(10);
     const hashedPassword = bcrypt.hashSync(password, salt);
 
-    users.push({email, password: hashedPassword});
-    fs.writeFileSync(USERS_FILE, JSON.stringify(users, null, 2))
+    users.push({ email, password: hashedPassword });
+    fs.writeFileSync(USERS_FILE, JSON.stringify(users, null, 2));
 
-    res.render('register', {error: null});
+    req.session.user = { email }
+
+    res.redirect('/blogs');
 });
-
 
 module.exports = router;
