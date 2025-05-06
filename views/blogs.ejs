@@ -28,14 +28,14 @@
     <div class="recent-blogs-content">
         <div class="primary-card">
             <figure>
-                <a href="/blog/<%= blogs[0].id %>">
+                <a href="/blogs/<%= blogs[0].id %>">
                     <img class="primary-card-img" src="/images/thumbnails/wide/1.png" alt="thumbnail">
                 </a>
             </figure>
             <div>
                 <p class="author-date-label"><%= blogs[0].author %> • <%= blogs[0].formatedDate %></p>
             </div>
-            <a href="/blog/<%= blogs[0].id %>">
+            <a href="/blogs/<%= blogs[0].id %>">
                 <div class="main-blog-title-wrapper">
                     <h3 class="main-blog-title"><%= blogs[0].title %></h3>
                     <figure>
@@ -51,7 +51,7 @@
         </div>
         <div class="secondary-card">
             <div class="secondary-blog-wrapper">
-                <a href="/blog/<%= blogs[1].id %>">
+                <a href="/blogs/<%= blogs[1].id %>">
                     <figure>
                         <img class="secondary-blog-img" src="/images/thumbnails/1.png" alt="thumbnail">
                     </figure>
@@ -62,7 +62,7 @@
                         <p style="margin-top: 0" class="author-date-label"><%= blogs[1].author.slice(0, 8) %>
                             • <%= blogs[1].formatedDate %></p>
                     </div>
-                    <a href="/blog/<%= blogs[1].id %>">
+                    <a href="/blogs/<%= blogs[1].id %>">
                         <h3 class="secondary-blog-title">
                             <%= blogs[1].title.slice(0, 20) %>
                         </h3>
@@ -71,7 +71,7 @@
                 </div>
             </div>
             <div class="secondary-blog-wrapper">
-                <a href="/blog/<%= blogs[2].id %>">
+                <a href="/blogs/<%= blogs[2].id %>">
                     <figure>
                         <img class="secondary-blog-img" src="/images/thumbnails/2.png" alt="thumbnail">
                     </figure>
@@ -81,7 +81,7 @@
                         <p style="margin-top: 0" class="author-date-label"><%= blogs[2].author.slice(0, 8) %>
                             • <%= blogs[2].formatedDate %></p>
                     </div>
-                    <a href="/blog/<%= blogs[2].id %>">
+                    <a href="/blogs/<%= blogs[2].id %>">
                         <h3 class="secondary-blog-title">
                             <%= blogs[2].title.slice(0, 20) %>
                         </h3>
@@ -98,7 +98,7 @@
         <div class="recent-blogs-content-below-card-content">
             <p style="margin-top: 0" class="author-date-label"><%= blogs[3].author %>
                 • <%= blogs[3].formatedDate %></p>
-            <a href="/blog/<%= blogs[3].id %>">
+            <a href="/blogs/<%= blogs[3].id %>">
                 <div class="recent-blogs-content-below-card-title-wrapper">
                     <h3 class="recent-blogs-content-below-card-title"><%= blogs[3].title.slice(0, 20) %></h3>
                     <figure>
@@ -118,12 +118,14 @@
         <% blogs.splice(0, 6).forEach((blog, index)=>{ %>
             <div class="all-blogs-card">
                 <figure>
-                    <img class="all-blogs-img" src="/images/thumbnails/normal/<%= index %>.png" alt="thumbnail">
+                    <a href="/blogs/<%= blog.id %>">
+                        <img class="all-blogs-img" src="/images/thumbnails/normal/<%= index %>.png" alt="thumbnail">
+                    </a>
                 </figure>
                 <div>
                     <p class="author-date-label"><%= blog.author %> • <%= blog.formatedDate %></p>
                 </div>
-                <a href="/blog/<%= blog.id %>">
+                <a href="/blogs/<%= blog.id %>">
                     <h3 class="all-blogs-card-title"><%= blog.title.slice(0, 20) %> </h3>
                 </a>
                 <p class="all-blogs-card-text"><%= blog.description.slice(0, 90) %> </p>
