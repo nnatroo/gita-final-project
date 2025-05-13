@@ -12,8 +12,11 @@ const registerRouter = require('./routes/register');
 const blogsRouter = require('./routes/blogs');
 const logoutRouter = require('./routes/logout');
 const aboutRouter = require('./routes/about');
+const {connectDatabase} = require("./database/database");
 
 const app = express();
+
+connectDatabase()
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

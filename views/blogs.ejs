@@ -21,7 +21,9 @@
 <%- include('partials/header', {email: email}); %>
 
 <div class="blog-container">
-    <h2 class="title container">THE BLOG</h2>
+    <a href="/">
+        <h2 class="title container">THE BLOG</h2>
+    </a>
 </div>
 
 <section class="recent-blogs container">
@@ -93,9 +95,11 @@
         </div>
     </div>
     <div class="recent-blogs-content-below-card">
-        <figure class="recent-blogs-content-below-card-img-wrapper">
-            <img class="recent-blogs-content-below-card-img" src="/images/thumbnails/wide/2.png" alt="">
-        </figure>
+        <a href="/blogs/<%= blogs[3].id %>">
+            <figure class="recent-blogs-content-below-card-img-wrapper">
+                <img class="recent-blogs-content-below-card-img" src="/images/thumbnails/wide/2.png" alt="">
+            </figure>
+        </a>
         <div class="recent-blogs-content-below-card-content">
             <p style="margin-top: 0" class="author-date-label"><%= blogs[3].author %>
                 • <%= blogs[3].formatedDate %></p>

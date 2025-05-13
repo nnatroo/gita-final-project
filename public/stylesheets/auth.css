@@ -44,7 +44,7 @@ body {
 }
 
 form {
-    margin-top: 70px;
+    margin-top: 35px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -149,4 +149,10 @@ button:hover {
         font-size: 14px;
 
     }
+}
+
+.error {
+    margin-top: 35px;
+    color: darkred;
+    text-align: center;
 }
