@@ -2,7 +2,7 @@
     <div class="username">
         <a href="/">
             <p>
-                <%= email.split('@')[0] %>
+                <%= email ? email.split('@')[0] : null %>
             </p>
         </a>
     </div>
