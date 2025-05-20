@@ -6,6 +6,7 @@
     <title>The Blog | Newsletter</title>
     <link rel="stylesheet" href="/stylesheets/header.css">
     <link rel="stylesheet" href="/stylesheets/footer.css">
+    <link rel="stylesheet" href="/stylesheets/blogs.css">
     <link rel="stylesheet" href="/stylesheets/newsletter.css">
     <link rel="stylesheet" href="/stylesheets/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -23,15 +24,39 @@
     <h3 class="newsletter-title">Stories and interviews</h3>
     <p class="newsletter-description">Subscribe to learn about new product features, the latest in technology,
         solutions, and updates.</p>
-    <div class="newsletter-form">
-        <div class="input-wrapper">
-            <input class="newsletter-input" type="text" placeholder="Enter your email">
-            <p class="newsletter-input-label">We care about your data in our <a class="newsletter-input-label" href="#">privacy
-                    policy</a></p>
+    <form action="/newsletter" method="POST">
+        <div class="newsletter-form">
+            <div class="input-wrapper">
+                <input class="newsletter-input" type="text" placeholder="Enter your email" name="email">
+                <p class="newsletter-input-label">We care about your data in our <a
+                            class="newsletter-input-label newsletter-input-label-link" href="#">privacy
+                        policy</a></p>
+            </div>
+            <button class="newsletter-btn">Subscribe</button>
         </div>
-        <button class="newsletter-btn">Subscribe</button>
-    </div>
+    </form>
 </div>
+<section class="all-blogs container">
+    <h3 class="recent-blogs-title">All blog posts</h3>
+    <div class="all-blogs-grid">
+        <% blogs.forEach((blog, index)=>{ %>
+            <div class="all-blogs-card">
+                <figure>
+                    <a href="/blogs/<%= blog.id %>">
+                        <img class="all-blogs-img" src="/images/thumbnails/normal/<%= index %>.png" alt="thumbnail">
+                    </a>
+                </figure>
+                <div>
+                    <p class="author-date-label"><%= blog.author %> • <%= blog.formatedDate %></p>
+                </div>
+                <a href="/blogs/<%= blog.id %>">
+                    <h3 class="all-blogs-card-title"><%= blog.title.slice(0, 20) %> </h3>
+                </a>
+                <p class="all-blogs-card-text"><%= blog.description.slice(0, 90) %> </p>
+            </div>
+        <% }) %>
+    </div>
+</section>
 
 <%- include('partials/footer'); %>
 </body>
