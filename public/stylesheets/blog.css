@@ -149,3 +149,64 @@ body {
     color: #C0C5D0;
     margin-top: 32px;
 }
+
+.blog-comments {
+    margin-top: 64px;
+}
+
+.separator {
+    height: 1px;
+    width: 100%;
+    background-color: rgba(29, 41, 57, 1);
+}
+
+.blog-comments-title {
+    font-family: Inter, monospace;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 48px;
+    letter-spacing: 0;
+    color: rgba(255, 255, 255, 1);
+    margin-top: 50px;
+}
+
+.comment-input {
+    border-radius: 8px;
+    border: 1px solid rgba(55, 65, 81, 1);
+    resize: none;
+    margin-top: 32px;
+    width: 100%;
+    min-height: 120px;
+    background-color: rgba(17, 24, 39, 1);
+    outline: none;
+    font-family: Inter, monospace;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 25.6px;
+    letter-spacing: 0;
+    color: rgba(255, 255, 255, 1);
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.post-btn {
+    width: 145px;
+    height: 45px;
+    border-radius: 6px;
+    background-color: rgba(67, 24, 209, 1);
+    margin-top: 22px;
+    font-family: Inter, monospace;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 21px;
+    letter-spacing: 0;
+    text-align: center;
+    border: none;
+    color: rgba(255, 255, 255, 1);
+    cursor: pointer;
+    transition: 0.3s all;
+}
+
+.post-btn:hover {
+    opacity: 0.7;
+}

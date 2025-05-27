@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Blog</title>
+    <title>The Blog | <%= blog.title %></title>
     <link rel="stylesheet" href="/stylesheets/header.css">
     <link rel="stylesheet" href="/stylesheets/footer.css">
     <link rel="stylesheet" href="/stylesheets/blog.css">
@@ -43,6 +43,14 @@
         <p class="recent-blog-date"><%= blog.formatedDate %></p>
         <p class="blog-title"><%= blog.title %></p>
         <p class="blog-text"><%= blog.content %></p>
+        <section class="blog-comments">
+            <div class="separator"></div>
+            <h3 class="blog-comments-title">Comments</h3>
+            <form action="/blogs/<%= blog.id %>/newComment" method="POST">
+                <textarea name="newComment" class="comment-input" placeholder="Comment..."></textarea>
+                <button class="post-btn">Post Comment</button>
+            </form>
+        </section>
     </div>
 </div>
 
