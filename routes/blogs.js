@@ -120,4 +120,5 @@ router.post('/:blogId/newComment', requireAuth, async function (req, res, next) 
     res.redirect(`/blogs/${blogId}`);
 });
 
+
 module.exports = router;

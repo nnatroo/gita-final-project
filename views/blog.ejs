@@ -50,6 +50,38 @@
                 <textarea name="newComment" class="comment-input" placeholder="Comment..."></textarea>
                 <button class="post-btn">Post Comment</button>
             </form>
+            <div class="comments-list">
+                <% blog.comments.forEach((comment)=>{ %>
+                    <div class="comment-wrapper">
+                        <div class="comment-header">
+                            <figure class="author-wrapper">
+                                <img class="author-img"
+                                     src="https://cdn.pixabay.com/photo/2023/02/18/11/00/icon-7797704_640.png" alt="">
+                                <div>
+                                    <p class="author-name"><%= comment.author.split("@")[0] %></p>
+                                    <p class="comment-date"><%= comment.date.toLocaleDateString("en-US", {
+                                            month: "short",
+                                            day: "numeric",
+                                            year: "numeric"
+                                        }) %></p>
+                                </div>
+                            </figure>
+                            <figure class="like-wrapper">
+                                <form action="#">
+                                    <button class="like-btn">
+                                        <img src="/images/like-icon.svg" alt="like-icon">
+                                    </button>
+                                </form>
+                                <p class="like-count"><%= comment.likes ? comment.likes.length : 0 %></p>
+                            </figure>
+                        </div>
+                        <div class="comment-content">
+                            <p class="comment-text"><%= comment.content %></p>
+                        </div>
+                        <button class="reply-btn">Reply</button>
+                    </div>
+                <% }) %>
+            </div>
         </section>
     </div>
 </div>

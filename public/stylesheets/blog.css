@@ -210,3 +210,98 @@ body {
 .post-btn:hover {
     opacity: 0.7;
 }
+
+.comment-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.comment-wrapper {
+    margin-top: 32px;
+    background-color: rgba(17, 24, 39, 1);
+    border-radius: 12px;
+    padding: 24px;
+}
+
+.author-img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.author-wrapper {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.author-name {
+    font-family: Inter, monospace;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0;
+    color: rgba(255, 255, 255, 1);
+}
+
+.comment-date {
+    font-family: Inter, monospace;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0;
+    color: rgba(107, 114, 128, 1);
+}
+
+.like-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.like-btn {
+    background-color: transparent;
+    border: none;
+}
+
+.like-count {
+    font-family: Inter, monospace;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0;
+    text-align: center;
+    color: rgba(67, 24, 209, 1);
+}
+
+.comment-content {
+    margin-top: 18px;
+}
+
+.comment-text {
+    font-family: Inter, monospace;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 26px;
+    letter-spacing: 0;
+    color: rgba(255, 255, 255, 1);
+}
+
+.reply-btn {
+    margin-top: 16px;
+    font-family: Inter, monospace;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0;
+    text-align: center;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    color: rgba(67, 24, 209, 1);
+    transition: 0.3s all;
+}
+
+.reply-btn:hover {
+    opacity: 0.7;
+}
