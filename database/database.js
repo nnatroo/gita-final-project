@@ -1,7 +1,9 @@
 const mongoose = require('mongoose');
 
+require('dotenv').config()
+
 const connectDatabase = () => {
-    mongoose.connect('mongodb+srv://test:test@cluster0.ndq7krf.mongodb.net/main?retryWrites=true&w=majority&appName=Cluster0', {
+    mongoose.connect(process.env.DB_CONNECTION_STRING, {
         useNewUrlParser: true,
         useUnifiedTopology: true,
     })

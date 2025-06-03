@@ -100,7 +100,6 @@ router.get('/:blogId', requireAuth, async function (req, res, next) {
 })
 
 router.post('/:blogId/newComment', requireAuth, async function (req, res, next) {
-
     const {blogId} = req.params;
     const {newComment} = req.body;
 
