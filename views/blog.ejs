@@ -83,6 +83,11 @@
                             <p class="comment-text"><%= comment.content %></p>
                         </div>
                         <button class="reply-btn">Reply</button>
+                        <form class="reply-input-wrapper" action="/blogs/<%= blog.id %>/comment/<%= comment.id %>/reply"
+                              method="POST">
+                            <textarea class="reply-input" name="replyContent" placeholder="Reply..."></textarea>
+                            <button class="post-btn">Post Reply</button>
+                        </form>
                     </div>
                 <% }) %>
             </div>
@@ -92,5 +97,6 @@
 
 <%- include('partials/footer'); %>
 
+<script src="/javascripts/replyInput.js"></script>
 </body>
 </html>
