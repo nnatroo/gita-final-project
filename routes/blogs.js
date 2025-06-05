@@ -120,4 +120,24 @@ router.post('/:blogId/newComment', requireAuth, async function (req, res, next) 
 });
 
 
+router.post('/:blogId/comment/:commentId/like', requireAuth, async function (req, res, next) {
+    const {blogId, commentId} = req.params;
+    const {email} = req.session.user;
+
+    try {
+        const blog = await Blog.findOne({id: blogId, "comments.id": commentId})
+        const comment = blog.comments.find(comment => comment.id === commentId);
+        const hasLiked = comment.likes && comment.likes.includes(email);
+
+        const result = await Blog.updateOne({
+            id: blogId,
+            "comments.id": commentId
+        }, hasLiked ? {$pull: {"comments.$.likes": email}} : {$addToSet: {"comments.$.likes": email}})
+        console.log(result)
+    } catch (err) {
+        console.error(err);
+    }
+    res.redirect(`/blogs/${blogId}`);
+});
+
 module.exports = router;

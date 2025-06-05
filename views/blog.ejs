@@ -67,9 +67,13 @@
                                 </div>
                             </figure>
                             <figure class="like-wrapper">
-                                <form action="#">
+                                <form action="/blogs/<%= blog.id %>/comment/<%= comment.id %>/like" method="POST">
                                     <button class="like-btn">
-                                        <img src="/images/like-icon.svg" alt="like-icon">
+                                        <% if (comment.likes.includes(email)) { %>
+                                            <img src="/images/like-icon-filled.svg" alt="like-icon">
+                                        <% } else { %>
+                                            <img src="/images/like-icon.svg" alt="like-icon">
+                                        <% } %>
                                     </button>
                                 </form>
                                 <p class="like-count"><%= comment.likes ? comment.likes.length : 0 %></p>
