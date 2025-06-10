@@ -217,12 +217,10 @@ body {
 }
 
 .comment-wrapper {
-    display: flex;
     margin-top: 32px;
     background-color: rgba(17, 24, 39, 1);
     border-radius: 12px;
     padding: 24px;
-    flex-direction: column;
 }
 
 .author-img {
@@ -303,39 +301,8 @@ body {
     border: none;
     color: rgba(67, 24, 209, 1);
     transition: 0.3s all;
-    align-self: flex-start;
 }
 
 .reply-btn:hover {
     opacity: 0.7;
-}
-
-.reply-input-wrapper {
-    display: none;
-    align-self: flex-end;
-    flex-direction: column;
-    width: 90%;
-    margin-top: 25px;
-}
-
-.show {
-    display: flex;
-}
-
-.reply-input {
-    resize: none;
-    outline: none;
-    border-radius: 8px;
-    border: 1px solid rgba(55, 65, 81, 1);
-    width: 100%;
-    min-height: 120px;
-    background-color: rgba(17, 24, 39, 1);
-    font-family: Inter, monospace;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 25.6px;
-    letter-spacing: 0;
-    color: rgba(255, 255, 255, 1);
-    padding: 10px;
-    box-sizing: border-box;
 }
