@@ -17,20 +17,10 @@ router.post('/', async function (req, res, next) {
     const {email} = req.body;
 
     try {
-        console.log(email);
+        const newNewsletter = new Newsletter({id: String(Date.now()), email})
 
-        if (email.length === 0){
-
-        }else {
-            const newNewsletter = new Newsletter({id: String(Date.now()), email})
-
-            const res = await newNewsletter.save();
-        }
-
-        // const newNewsletter = new Newsletter({id: String(Date.now()), email})
-        //
-        // const res = await newNewsletter.save();
-        // console.log(res);
+        const res = await newNewsletter.save();
+        console.log(res);
 
     } catch (err) {
         console.error(err);
