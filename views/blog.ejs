@@ -88,6 +88,27 @@
                             <textarea class="reply-input" name="replyContent" placeholder="Reply..."></textarea>
                             <button class="post-btn">Post Reply</button>
                         </form>
+                        <div class="replies-wrapper">
+                            <% comment.replies.reverse().forEach((reply)=>{ %>
+                                <div class="reply-wrapper">
+                                    <figure class="author-wrapper">
+                                        <img class="author-img" id="reply-author-img"
+                                             src="https://cdn.pixabay.com/photo/2023/02/18/11/00/icon-7797704_640.png"
+                                             alt="">
+                                        <div>
+                                            <p class="author-name"><%= reply.author.split("@")[0] %></p>
+                                            <p class="comment-date"><%= reply.date.toLocaleDateString("en-US", {
+                                                    month: "short",
+                                                    day: "numeric",
+                                                    year: "numeric"
+                                                }) %></p>
+                                        </div>
+                                    </figure>
+                                    <p class="reply-content"><%= reply.content %></p>
+                                </div>
+
+                            <% }) %>
+                        </div>
                     </div>
                 <% }) %>
             </div>

@@ -140,4 +140,29 @@ router.post('/:blogId/comment/:commentId/like', requireAuth, async function (req
     res.redirect(`/blogs/${blogId}`);
 });
 
+router.post('/:blogId/comment/:commentId/reply', requireAuth, async function (req, res, next) {
+    const {blogId, commentId} = req.params;
+    const {email} = req.session.user;
+    const {replyContent} = req.body;
+
+    try {
+        const reply = {
+            content: replyContent,
+            author: email
+        }
+        const result = await Blog.updateOne({
+            id: blogId,
+            "comments.id": commentId
+        }, {
+            $push: {
+                "comments.$.replies": reply
+            }
+        })
+        console.log(result);
+    } catch (err) {
+        console.error(err);
+    }
+    res.redirect(`/blogs/${blogId}`);
+});
+
 module.exports = router;

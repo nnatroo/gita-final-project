@@ -339,3 +339,33 @@ body {
     padding: 10px;
     box-sizing: border-box;
 }
+
+.replies-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 90%;
+    margin-top: 26px;
+    align-self: flex-end;
+}
+
+.reply-wrapper {
+    background-color: rgba(31, 41, 55, 1);
+    padding: 16px;
+    border-radius: 8px;
+}
+
+#reply-author-img {
+    width: 32px;
+    height: 32px;
+}
+
+.reply-content {
+    font-family: Inter, monospace;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 25px;
+    letter-spacing: 0;
+    color: rgba(255, 255, 255, 1);
+    margin-top: 12px;
+}
